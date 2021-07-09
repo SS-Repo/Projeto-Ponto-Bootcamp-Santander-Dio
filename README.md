@@ -14,4 +14,6 @@ Tecnologias Usadas:
  9. Ubuntu
  10. Intellij Community IDE
  
+ <img src="https://ibb.co/qD7LSbL"/>
+ 
  <sergio.desenvolvedor.web@gmail.com>
