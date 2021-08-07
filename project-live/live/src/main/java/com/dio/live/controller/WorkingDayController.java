@@ -15,48 +15,38 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @CrossOrigin
-@RequestMapping("/")
+@RequestMapping("/api/v1/working-day")
 @RestController
 public class WorkingDayController {
 
     @Autowired
     WorkingDayService workingDayService;
 
-    @RequestMapping(value = "/WorkingDay/{Object}",
-            method = RequestMethod.POST,
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    @GetMapping
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<WorkingDay> createWorkingDay(@Valid @RequestBody WorkingDay workingDay){
         return ResponseEntity.ok(workingDayService.saveWorkingDay(workingDay));
     }
 
-    @RequestMapping(value = "/WorkingDayGetAll",
-            method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     @GetMapping
     public ResponseEntity<List<WorkingDay>> getAllWorkingDay(){
         return ResponseEntity.ok(workingDayService.getAllWorkingDay());
     }
 
-    @RequestMapping(value = "/WorkingDay/{ID}",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    @GetMapping(value = "/{idWorkingDay}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<WorkingDay> getFromIdWorkingDay(@PathVariable Long idWorkingDay) throws Exception {
-        return ResponseEntity.ok(workingDayService.getFromIdWorkingDay(idWorkingDay)
+   @GetMapping("/{id}")
+    public ResponseEntity<WorkingDay> getFromIdWorkingDay(@PathVariable Long id) throws Exception {
+        return ResponseEntity.ok(workingDayService.getFromIdWorkingDay(id)
                 .orElseThrow(() -> new NoSuchElementException("Not found!")));
     }
-    @RequestMapping(value = "/WorkingDayPut/{Object}",method = RequestMethod.PUT)
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping
     public ResponseEntity<WorkingDay> updateWorkingDay(@Valid @RequestBody WorkingDay workingDay){
         return ResponseEntity.ok(workingDayService.updateWorkingDay(workingDay));
     }
 
-    @RequestMapping(value = "/WorkingDayDelete/{ID}", method = RequestMethod.DELETE)
-    @DeleteMapping(value = "/{idWorkingDay}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public void deleteFromIdWorkingDay(@PathVariable Long idWorkingDay) throws Exception {
+    @DeleteMapping("/{id}")
+    public void deleteFromIdWorkingDay(@PathVariable Long id) throws Exception {
         try {
-            workingDayService.deleteWorkingDay(idWorkingDay);
+            workingDayService.deleteWorkingDay(id);
         }catch (Exception ex){
             ResponseEntity.internalServerError();
         }
