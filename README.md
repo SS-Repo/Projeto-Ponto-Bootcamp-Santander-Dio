@@ -1,46 +1,53 @@
-<h1>Project-Bootcamp-Dio-Santander</h1>
+<h2>Digital Innovation: Santander Bootcamp - Desenvolvendo um sistema de ponto de acesso em API REST com Spring Boot</h2>
 
-Projeto:Sistema de Ponto de Acesso
+Durante o projeto foram desenvolvidos os seguintes tópicos :
 
-Tecnologias Usadas:
-<h2>IDE</h2>
+* Setup inicial de projeto com o Spring Boot Initialzr 
+* Criação de modelo de dados para o mapeamento de entidades em bancos de dados
+* Desenvolvimento de operações de gerenciamento de usuários (Cadastro, leitura, atualização e remoção de pessoas de um sistema).
+* Documentação da API com SWAGGER.
+* Relação de cada uma das operações acima com o padrão arquitetural REST, e a explicação de cada um dos conceitos REST envolvidos durante o desenvolvimento do projeto.
 
-<ul>
-  <ol>- Intellij Idea Community</ol>
-</ul>
+Crie a base de dados para o hibernate criar as tabelas do projeto :
 
-<h2>Linguagem de Programação</h2>
+````
+CREATE DATABASE dio
 
-<ul>
-  <ol>- Java 16</ol>
-</ul>
+````
+Acessar API e SWAGGER-UI:
 
-<h2>Banco de Dados</h2>
+```
+http://localhost:8080/api/v1/working-day
 
-<ul>
-  <ol>- PostgreSQL 12</ol>
-</ul>
+http://localhost:8080/swagger-ui/index.html#/
+```
 
-<h2>Tecnologias</h2>
 
-<ul>
-  <ol>- Spring Boot Web</ol>
-  <ol>- Swagger</ol>
-  <ol>- Git </ol>
-  <ol>- Github </ol>
-</ul>
+ pré-requisitos do projeto:
 
-<h2>Sistema Operacional</h2>
+* Java 16 ou versões superiores.
+* Gradle
+* Hibernate
+* Jackson Dataformat XML
+* PostgreSQL 12
+* Lombok
+* Intellj IDEA Community Edition ou sua IDE favorita.
+* Controle de versão GIT instalado na sua máquina.
+  
 
-<ul>
- <ol>- Ubuntu 20.04</ol>
-</ul>
+Abaixo, seguem links bem bacanas, sobre tópicos mencionados durante a aula:
 
--------------------------------------------------------------------------------------------------------------------
-Preview
+* [Referência do Intellij IDEA Community, para download](https://www.jetbrains.com/idea/download)
+* [Palheta de atalhos de comandos do Intellij](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
+* [Site oficial do Spring](https://spring.io/)
+* [Site oficial do Spring Initialzr, para setup do projeto](https://start.spring.io/)
+* [Site oficial do GIT](https://git-scm.com/)
+* [Site oficial do GitHub](http://github.com/)
+* [Documentação oficial do Lombok](https://projectlombok.org/)
+* [Referência para o padrão arquitetural REST](https://restfulapi.net/)
 
- <a href="https://ibb.co/qD7LSbL"><img src="https://i.ibb.co/FhmkrGk/swagger.png" alt="swagger" border="0" /></a>
- 
--------------------------------------------------------------------------------------------------------------------
- 
- Email:<sergio.desenvolvedor.web@gmail.com>
+
+email:sergio.desenvolvedor.web@gmail.com
+
+
+
